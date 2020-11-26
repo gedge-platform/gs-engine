@@ -1,0 +1,17 @@
+{
+    "SERVER" : "129.254.202.69",
+    "USER" : "root",
+    "PWD" : "gedgeserver",
+    "K8S_INIT_FILE" : "/root/cloud-platform/script/k8s-init.sh",
+    "K8S_TOKEN_FILE" : "/root/cloud-platform/script/k8s-token.sh",
+    "K8S_API_KEY_FILE" : "/root/cloud-platform/script/k8s-apikey.sh",
+	"K8S_WORKER_INIT_FILE" : "/root/cloud-platform/script/k8s-init-worker.sh",
+    "WORKER_NODE_IP" : [
+	"129.254.202.74",
+	"129.254.202.84",
+	"129.254.202.85",
+	"129.254.202.88"
+    ],
+    "SR_IOV_INIT_FILE" : "/root/cloud-platform/script/sriov-init.sh",
+    "MULTUS_INIT_FILE" : "/root/cloud-platform/script/multus-init.sh"
+}
