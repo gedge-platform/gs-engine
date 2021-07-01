@@ -8,9 +8,9 @@ Software and infrastructure technology to support AI services with low latency o
 [![Generic badge](https://img.shields.io/badge/release-v1.0-blueviolet.svg)](https://github.com/gedge-platform/gs-engine/releases)
 
 ## 목차
-1. GS-Engine 구조 및 기능
-3. GSE API Server
-4. GSE Infra-Interface
+1. [GS-Engine 구조 및 기능](https://github.com/cynpna/gs-engine/blob/main/README.md#gs-engine-%EA%B5%AC%EC%A1%B0-%EB%B0%8F-%EA%B8%B0%EB%8A%A5)
+2. [GSE API Server](https://github.com/cynpna/gs-engine/blob/main/README.md#gse-api-server)
+3. [GSE Infra-Interface](https://github.com/cynpna/gs-engine/blob/main/README.md#gse-infra-interface)
 
 ## GS-Engine 구조 및 기능
 - 데이터 처리 가속 모듈
