@@ -34,7 +34,7 @@ Software and infrastructure technology to support AI services with low latency o
 GSE API Server는 초저지연 데이터 처리 프레임워크의 사용 편의성 제공을 위한 서비스 실행 인프라 관리, 서비스 실행관리, 서비스 오토 스케일링 관리 등의 기능을 제공한다.
 
 - 구조
-<img src="https://user-images.githubusercontent.com/29933947/124077983-a98b1480-da82-11eb-849b-9754c4cc5ccd.png" width="80%">
+<img src="https://user-images.githubusercontent.com/74389889/145032837-02260de7-a098-4cc8-b799-c5b9b9e295d7.png" width="80%">
 
 - 구성요소
     - user
