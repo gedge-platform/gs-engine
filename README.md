@@ -51,7 +51,7 @@ GSE API Server는 초저지연 데이터 처리 프레임워크의 사용 편의
         - gse api server를 통해 실행된 서비스의 접근을 위한 gateway 에 public ip 할당
     - gse gateway 
         - gse api server를 통해 실행된 서비스의 요청 라우팅
-    - envoy/PV
+    - envoy/pv
         - gse api server를 통해 실행된 service mesh 를 이루는 microservice 구조의 응용간 트래픽 모니터링(제어는 추후 예정)
         
 ## GSE Infra-Interface
