@@ -34,22 +34,26 @@ Software and infrastructure technology to support AI services with low latency o
 GSE API Server는 초저지연 데이터 처리 프레임워크의 사용 편의성 제공을 위한 서비스 실행 인프라 관리, 서비스 실행관리, 서비스 오토 스케일링 관리 등의 기능을 제공한다.
 
 - 구조
-<img src="https://user-images.githubusercontent.com/29933947/124077983-a98b1480-da82-11eb-849b-9754c4cc5ccd.png" width="80%">
+<img src="https://user-images.githubusercontent.com/74389889/145032837-02260de7-a098-4cc8-b799-c5b9b9e295d7.png" width="80%">
 
 - 구성요소
     - user
         - gse api server 사용자
         - gse api는 shell 환경에서 curl 등의 shell 명령을 호출하거나 프로그램에서 http 라이브러리를 이용하여 호출
-    - gse utility(cli)
-        - gse api server 사용을 위한 utility 도구
-        - curl을 활용하여 사용
     - gse api server
         - GS-Engine 사용 편의성 제공을 위한 서비스 실행 인프라 관리, 서비스 실행 관리, 서비스 오토 스케일링 관리 제공
-        - data(데이터 저장소), conf(설정 파일), logs 등으로 구성
+        - controller(사용자 요청 처리), service(k8s와의 연계), sql(DB metadata 연계), tools(schema 기반 서비스 변환), logs 등으로 구성
     - kubernetes cluster
-        - GS-Engine 사용을 위한 resource metric server(cpu, memory), custom metric server 로 구성
-        - metric server로 수집된 데이터를 오토스케일링 컨트롤에게 제공
-
+        - GS-Engine 사용을 위한 resource metric server(cpu, memory), prometheus server 로 구성
+        - metric server와 prometheus server를 통해 수집된 데이터를 오토스케일링 컨트롤에게 제공
+        - 지능형 서비스 가속을 위한 gpu, 네트워크 가속을 위한 CNI(flannel, multus, sr-iov 등) 실행
+    - metalb
+        - gse api server를 통해 실행된 서비스의 접근을 위한 gateway 에 public ip 할당
+    - gse gateway 
+        - gse api server를 통해 실행된 서비스의 요청 라우팅
+    - envoy/pv
+        - gse api server를 통해 실행된 service mesh 를 이루는 microservice 구조의 응용간 트래픽 모니터링(제어는 추후 예정)
+        
 ## GSE Infra-Interface
 GSE Infra-Interface는 GEdge Platform 활용을 위한 쿠버네티스 클러스터를 구성하고 이를 운영하기 위한 기능을 제공한다.
 - 구조
