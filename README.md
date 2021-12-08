@@ -77,5 +77,9 @@ GSE Infra-Interface는 GEdge Platform 활용을 위한 쿠버네티스 클러스
  
 - 웹기반 시험도구
     - GSE Infra-Interface 로 클러스터 또는 서비스 구성 형상에 따른 네트워크 성능을 측정하기 위한 도구
-    - 동작 예) 클러스터 오버레이 네트워크 선택/설정 - 포드 내 멀티 네트워크 선택/설정 - 포드 내 네트워크 가속 선택/설정 - 포드 배포 및 네트워크 성능 측정
+    - 동작 예) 
+      - 클러스터 오버레이 네트워크 선택/설정
+      - 포드 내 멀티 네트워크 선택/설정
+      - 포드 내 네트워크 가속 선택/설정
+      - 포드 배포 및 네트워크 성능 측정
 ![gse-infra-webtool-example](https://user-images.githubusercontent.com/29933947/145136152-f2c6e6a0-fe66-4934-ad4a-c61d7a2078cd.png)
