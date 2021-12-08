@@ -5,7 +5,7 @@ Software and infrastructure technology to support AI services with low latency o
 
 [![Generic badge](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://www.python.org/downloads/release/python-360/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Generic badge](https://img.shields.io/badge/release-v1.0-blueviolet.svg)](https://github.com/gedge-platform/gs-engine/releases)
+[![Generic badge](https://img.shields.io/badge/release-v2.0-blueviolet.svg)](https://github.com/gedge-platform/gs-engine/releases)
 
 ## 목차
 1. [GS-Engine 구조 및 기능](https://github.com/cynpna/gs-engine/blob/main/README.md#gs-engine-%EA%B5%AC%EC%A1%B0-%EB%B0%8F-%EA%B8%B0%EB%8A%A5)
@@ -73,5 +73,9 @@ GSE Infra-Interface는 GEdge Platform 활용을 위한 쿠버네티스 클러스
         - Policy Manager
     - Utility
         - Log Manager
-        - Kubernetes Clinet 
-
+        - Kubernetes Clinet
+ 
+- 웹기반 시험도구
+    - GSE Infra-Interface 로 클러스터 또는 서비스 구성 형상에 따른 네트워크 성능을 측정하기 위한 도구
+    - 동작 예) 클러스터 오버레이 네트워크 선택/설정 - 포드 내 멀티 네트워크 선택/설정 - 포드 내 네트워크 가속 선택/설정 - 포드 배포 및 네트워크 성능 측정
+![gse-infra-webtool-example](https://user-images.githubusercontent.com/29933947/145136152-f2c6e6a0-fe66-4934-ad4a-c61d7a2078cd.png)
