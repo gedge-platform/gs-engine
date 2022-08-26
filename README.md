@@ -5,7 +5,7 @@ Software and infrastructure technology to support AI services with low latency o
 
 [![Generic badge](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://www.python.org/downloads/release/python-360/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Generic badge](https://img.shields.io/badge/release-v2.0-blueviolet.svg)](https://github.com/gedge-platform/gs-engine/releases)
+[![Generic badge](https://img.shields.io/badge/release-v2.5-blueviolet.svg)](https://github.com/gedge-platform/gs-engine/releases)
 
 ## 목차
 1. [GS-Engine 구조 및 기능](https://github.com/cynpna/gs-engine/blob/main/README.md#gs-engine-%EA%B5%AC%EC%A1%B0-%EB%B0%8F-%EA%B8%B0%EB%8A%A5)
@@ -55,31 +55,42 @@ GSE API Server는 초저지연 데이터 처리 프레임워크의 사용 편의
         - gse api server를 통해 실행된 service mesh 를 이루는 microservice 구조의 응용간 트래픽 모니터링(제어는 추후 예정)
         
 ## GSE Infra-Interface
-GSE Infra-Interface는 GEdge Platform 활용을 위한 쿠버네티스 클러스터를 구성하고 이를 운영하기 위한 기능을 제공한다.
-- 구조
-![gse-infra-architecture](https://user-images.githubusercontent.com/29933947/124078020-abed6e80-da82-11eb-89d5-4dc135416fa0.png)
+GSE Infra-Interface는 여러 개의 쿠버네티스 클러스터를 구성 및 운영하고, 이를 기반으로 컴퓨팅/네트워크 가속 자원 활용에 따른 시스템 성능을 분석하기 위한 기능을 제공한다.  
+
+- 구조  
+    ![gse infra-interface-2 5 구조](https://user-images.githubusercontent.com/29933947/186815689-54b9b014-f99e-49ab-9e8f-8fdb4dd6d477.png)
 
 - 구성요소
-    - Resource Manager
-        - Node Manager
-        - Pod Manager
+    - Kubernetes Interface
+      - Node Manager
+      - Pod Manager
     - Initialization Manager 
-        - Set Kubernetes Cluster Information
-        - Get Kubernetes Cluster Information
-        - Reset Kubernetes Cluster
-        - Get Access Key
+      - Set Kubernetes Cluster Information
+      - Get Kubernetes Cluster Information
+      - Reset Kubernetes Cluster
+      - Get Access Key
     - Network Manager
-        - Network Interface Manager
-        - Policy Manager
+      - Network Interface Manager
+      - Policy Manager
     - Utility
-        - Log Manager
-        - Kubernetes Clinet
+      - Log Manager
+      - Kubernetes Clinet
+      - Login    
+    - MicroService
+    - DataBase Interface  
  
 - 웹기반 시험도구
-    - GSE Infra-Interface 로 클러스터 또는 서비스 구성 형상에 따른 네트워크 성능을 측정하기 위한 도구
+    - GSE Infra-Interface로 구성되는 클러스터 형상 및 정보 확인  
+
+        ![gse infra-interface-cluster info](https://user-images.githubusercontent.com/29933947/186820597-df0f981d-c6e9-4db0-adfa-da08babc0f38.png)
+
+
+    - 클러스터 구성 형상에 따른 컴퓨팅/네트워크 성능을 측정
+        ![gse-infra-webtool-example](https://user-images.githubusercontent.com/29933947/145136152-f2c6e6a0-fe66-4934-ad4a-c61d7a2078cd.png)   
+
     - 동작 예) 
       - 클러스터 오버레이 네트워크 선택/설정
       - 포드 내 멀티 네트워크 선택/설정
       - 포드 내 네트워크 가속 선택/설정
       - 포드 배포 및 네트워크 성능 측정
-![gse-infra-webtool-example](https://user-images.githubusercontent.com/29933947/145136152-f2c6e6a0-fe66-4934-ad4a-c61d7a2078cd.png)
+      - 테스트용 마이크로서비스 구성,배포 및 서비스 Topology 확인  
