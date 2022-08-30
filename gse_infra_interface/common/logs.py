@@ -1,46 +1,47 @@
-from . import static_value
+"""[summary]
+Log Module for Entire System
+"""
+import logging
 
-from logging.handlers import RotatingFileHandler
-import logging, inspect, os
+log_manager = logging.getLogger('main')
 
-class LogManager:
-    def __init__(self):
-        logger = logging.getLogger("api-server")
-        logger.setLevel(logging.DEBUG)
+def log_info(self, message='', code=''):
+    """[summary]
+    Info Level log Message
+    Args:
+        message (str, optional): [Log Message Text Data]. Defaults to ''.
+        code (str, optional): [Log Level Code Data]. Defaults to ''.
+    """
+    log_message = '[' + str(code) + '] ' + message
+    log_manager.info(log_message)
 
-        handler = RotatingFileHandler(
-            static_value.LOG_FILE, maxBytes = 5 * 1024 * 1024, backupCount=5
-        )
+def log_warning(self, message='', code='', fault=''):
+    """[summary]
+    Warning Level log Message
+    Args:
+        message (str, optional): [Log Message Text Data]. Defaults to ''.
+        code (str, optional): [Log Level Code Data]. Defaults to ''.
+        fault (str, optional): [Warning Message Text Data]. Defaults to ''.
+    """
+    log_message = '[' + str(code) + '] ' + message
+    log_manager.warning(log_message)
 
-        handler.setFormatter(
-            logging.Formatter(
-                "[%(asctime)s][%(levelname)s] %(message)s"
-            )
-        )
+def log_error(self, message='', code='', fault=''):
+    """[summary]
+    Error Level log Message
+    Args:
+        message (str, optional): [Log Message Text Data]. Defaults to ''.
+        code (str, optional): [Log Level Code Data]. Defaults to ''.
+        fault (str, optional): [Error Message Text Data]. Defaults to ''.
+    """
+    log_message = '[' + str(code) + '] ' + message + ' Detail=' + fault
+    log_manager.error(log_message)
 
-        logger.addHandler(handler)
-        self.logger = logger
-
-    def debug(self, contents):
-        frame = inspect.currentframe()
-        frame_info = inspect.getframeinfo(frame.f_back)
-        file_name = frame_info.filename
-        file_path = os.path.abspath(file_name)
-        index = file_name.find('api-server')
-        line_number = frame_info.lineno
-        self.logger.debug(
-            'File \"' + str(file_path + '\", line '+ str(line_number))+
-            ', in ' + str(frame_info.function)+' \debug : ' + str(contents)
-        )
-    
-    def error(self, contents):
-        frame = inspect.currentframe()
-        frame_info = inspect.getframeinfo(frame.f_back)
-        file_name = frame_info.filename
-        file_path = os.path.abspath(file_name)
-        index = file_name.find('api-server')
-        line_number = frame_info.lineno
-        self.logger.error(
-            'File \"' + str(file_path + '\", line '+ str(line_number))+
-            ', in ' + str(frame_info.function)+' \error : ' + str(contents)
-        )
+def log_debug(self, message=''):
+    """[summary]
+    Debug Level log Message
+    Args:
+        message (str, optional): [Log Message Text Data]. Defaults to ''.
+    """
+    log_message = message
+    log_manager.debug(log_message)
