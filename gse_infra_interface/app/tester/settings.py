@@ -1,5 +1,5 @@
-SERVER_IP="129.254.202.135"
-CLIENT_IP="129.254.175.71"
+SERVER_IP="xxx.xxx.xxx.xxx"
+CLIENT_IP="xxx.xxx.xxx.xxx"
 PORT = 5020
 
 ITERATION = 2
